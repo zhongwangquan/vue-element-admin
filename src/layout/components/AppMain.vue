@@ -1,7 +1,10 @@
 <template>
   <section class="app-main">
+    <!-- ** vue 封装的动画组件库: 实现组件切换的动画效果，比如左滑到右滑 -->
     <transition name="fade-transform" mode="out-in">
+      <!-- 组件数据缓存 -->
       <keep-alive :include="cachedViews">
+        <!--**** 动态路由，根据key来判断-->
         <router-view :key="key" />
       </keep-alive>
     </transition>

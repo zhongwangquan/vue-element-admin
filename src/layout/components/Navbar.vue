@@ -1,23 +1,25 @@
 <template>
   <div class="navbar">
+    <!--控制左侧菜单栏按钮-->
     <hamburger id="hamburger-container" :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
-
+    <!--面包屑导航-->
     <breadcrumb id="breadcrumb-container" class="breadcrumb-container" />
-
+    <!--右侧个人信息菜单-->
     <div class="right-menu">
       <template v-if="device!=='mobile'">
+        <!--搜索-->
         <search id="header-search" class="right-menu-item" />
 
         <error-log class="errLog-container right-menu-item hover-effect" />
-
+        <!--全屏-->
         <screenfull id="screenfull" class="right-menu-item hover-effect" />
-
+        <!--全局字体-->
         <el-tooltip content="Global Size" effect="dark" placement="bottom">
           <size-select id="size-select" class="right-menu-item hover-effect" />
         </el-tooltip>
 
       </template>
-
+      <!--个人信息-->
       <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
         <div class="avatar-wrapper">
           <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">

@@ -1,5 +1,6 @@
 <template>
   <div class="dashboard-container">
+    <!-- 动态组件，实现tabbar功能 -->
     <component :is="currentRole" />
   </div>
 </template>
@@ -14,7 +15,7 @@ export default {
   components: { adminDashboard, editorDashboard },
   data() {
     return {
-      currentRole: 'adminDashboard'
+      currentRole: 'adminDashboard' // 管理员面板
     }
   },
   computed: {
@@ -24,7 +25,7 @@ export default {
   },
   created() {
     if (!this.roles.includes('admin')) {
-      this.currentRole = 'editorDashboard'
+      this.currentRole = 'editorDashboard' // 其他用户面板
     }
   }
 }

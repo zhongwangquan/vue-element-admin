@@ -1,13 +1,14 @@
 <template>
   <div class="dashboard-editor-container">
+    <!-- 链接到github项目 -->
     <github-corner class="github-corner" />
-
+    <!-- 总数据 -->
     <panel-group @handleSetLineChartData="handleSetLineChartData" />
-
+    <!-- 折线图 -->
     <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
       <line-chart :chart-data="lineChartData" />
     </el-row>
-
+    <!-- 其他echarts图片 -->
     <el-row :gutter="32">
       <el-col :xs="24" :sm="24" :lg="8">
         <div class="chart-wrapper">
@@ -25,7 +26,7 @@
         </div>
       </el-col>
     </el-row>
-
+    <!-- 其他数据 -->
     <el-row :gutter="8">
       <el-col :xs="{span: 24}" :sm="{span: 24}" :md="{span: 24}" :lg="{span: 12}" :xl="{span: 12}" style="padding-right:8px;margin-bottom:30px;">
         <transaction-table />

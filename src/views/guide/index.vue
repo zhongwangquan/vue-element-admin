@@ -5,6 +5,7 @@
       features of the project. Demo is based on
       <a href="https://github.com/kamranahmedse/driver.js" target="_blank">driver.js.</a>
     </aside>
+    <!-- ** 步进操作指南提示 -->
     <el-button icon="el-icon-question" type="primary" @click.prevent.stop="guide">
       Show Guide
     </el-button>
