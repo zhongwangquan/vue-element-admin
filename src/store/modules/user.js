@@ -12,6 +12,7 @@ const state = {
 
 const mutations = {
   SET_TOKEN: (state, token) => {
+    // 登陆后新token,覆盖旧token
     state.token = token
   },
   SET_INTRODUCTION: (state, introduction) => {
@@ -36,6 +37,7 @@ const actions = {
       login({ username: username.trim(), password: password }).then(response => {
         const { data } = response
         commit('SET_TOKEN', data.token)
+        // cookie中重置token
         setToken(data.token)
         resolve()
       }).catch(error => {

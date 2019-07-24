@@ -164,8 +164,10 @@ export default {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
+          // 登陆选项 验证用户名密码
           this.$store.dispatch('user/login', this.loginForm)
             .then(() => {
+              // 登陆成功 跳转 根目录
               this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
               this.loading = false
             })

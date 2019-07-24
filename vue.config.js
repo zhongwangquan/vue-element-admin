@@ -53,9 +53,13 @@ module.exports = {
     // provide the app's title in webpack's name field, so that
     // it can be accessed in index.html to inject the correct title.
     name: name,
+    // externals: {
+    //   'vue-count-to': 'vue-count-to'
+    // },
     resolve: {
       alias: {
-        '@': resolve('src')
+        '@': resolve('src'),
+        'vue-count-to': resolve('public/static/vue-count-to.min.js')
       }
     }
   },

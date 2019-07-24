@@ -24,7 +24,7 @@ const users = {
 }
 
 export default [
-  // user login
+  // user login 登陆返回结果
   {
     url: '/user/login',
     type: 'post',
@@ -32,14 +32,14 @@ export default [
       const { username } = config.body
       const token = tokens[username]
 
-      // mock error
+      // mock error 登陆失败
       if (!token) {
         return {
           code: 60204,
           message: 'Account and password are incorrect.'
         }
       }
-
+      // 登陆成功，返回token
       return {
         code: 20000,
         data: token
